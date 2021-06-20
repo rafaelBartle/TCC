@@ -16,7 +16,7 @@ import model.dao.UserDAO;
 public class Usuario extends javax.swing.JFrame {
 
     /**
-     * Creates new form Usu
+     * Creates new form Usuario
      */
     public Usuario() {
         initComponents();

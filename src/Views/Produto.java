@@ -69,20 +69,6 @@ public class Produto extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Observação:");
 
-        txtCodigo.setText("jFormattedTextField1");
-
-        txtDescricao.setText("jTextField1");
-
-        txtMarca.setText("jTextField2");
-
-        txtEntrada.setText("jFormattedTextField2");
-
-        txtVenda.setText("jFormattedTextField3");
-
-        txtCusto.setText("jFormattedTextField4");
-
-        txtQuantidade.setText("jFormattedTextField5");
-
         txtObservacoes.setColumns(20);
         txtObservacoes.setRows(5);
         jScrollPane1.setViewportView(txtObservacoes);
@@ -111,16 +97,15 @@ public class Produto extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtCodigo)
-                        .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtMarca))
-                    .addComponent(txtEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(227, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
+                    .addComponent(txtDescricao)
+                    .addComponent(txtEntrada)
+                    .addComponent(txtVenda)
+                    .addComponent(txtCodigo)
+                    .addComponent(txtMarca)
+                    .addComponent(txtCusto)
+                    .addComponent(txtQuantidade))
+                .addGap(227, 227, 227))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCadastrar)
@@ -161,7 +146,7 @@ public class Produto extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(btnCadastrar)
                 .addGap(28, 28, 28))
         );

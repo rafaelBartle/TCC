@@ -51,16 +51,16 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="txtCodigo" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtValor" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtData" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtQuantidade" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtVendedor" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtProduto" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
+                      <Component id="txtProduto" alignment="0" pref="109" max="32767" attributes="0"/>
+                      <Component id="txtValor" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="235" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="272" max="32767" attributes="0"/>
                   <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
@@ -106,7 +106,7 @@
                       <Component id="btnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="65" max="32767" attributes="0"/>
+                  <EmptySpace pref="69" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,9 +118,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtCodigo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -128,9 +125,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtVendedor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
@@ -138,9 +132,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtProduto">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -148,9 +139,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtQuantidade">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jFormattedTextField4"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
@@ -158,14 +146,8 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jFormattedTextField3"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtValor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jFormattedTextField2"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>

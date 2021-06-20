@@ -62,25 +62,13 @@ public class VendaEditar extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Codigo:");
 
-        txtCodigo.setText("jFormattedTextField1");
-
         jLabel1.setText("Vendedor:");
-
-        txtVendedor.setText("jTextField1");
 
         jLabel2.setText("Produto:");
 
-        txtProduto.setText("jTextField2");
-
         jLabel3.setText("Quantidade:");
 
-        txtQuantidade.setText("jFormattedTextField4");
-
         jLabel4.setText("Data:");
-
-        txtData.setText("jFormattedTextField3");
-
-        txtValor.setText("jFormattedTextField2");
 
         jLabel5.setText("ValorTotal:");
 
@@ -114,14 +102,14 @@ public class VendaEditar extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtCodigo)
-                    .addComponent(txtValor)
                     .addComponent(txtData)
                     .addComponent(txtQuantidade)
                     .addComponent(txtVendedor)
-                    .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(235, Short.MAX_VALUE))
+                    .addComponent(txtProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                    .addComponent(txtValor))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(272, Short.MAX_VALUE)
                 .addComponent(btnExcluir)
                 .addGap(18, 18, 18)
                 .addComponent(btnSalvar)
@@ -158,7 +146,7 @@ public class VendaEditar extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnExcluir))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

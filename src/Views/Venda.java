@@ -61,17 +61,11 @@ public class Venda extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Codigo:");
 
-        txtCodigo.setText("jFormattedTextField1");
-
-        txtValor.setText("jFormattedTextField2");
-
-        txtData.setText("jFormattedTextField3");
-
-        txtQuantidade.setText("jFormattedTextField4");
-
-        txtVendedor.setText("jTextField1");
-
-        txtProduto.setText("jTextField2");
+        txtProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProdutoActionPerformed(evt);
+            }
+        });
 
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -94,14 +88,14 @@ public class Venda extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtCodigo)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtValor)
                     .addComponent(txtData)
                     .addComponent(txtQuantidade)
+                    .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtVendedor)
-                    .addComponent(txtProduto))
-                .addContainerGap(244, Short.MAX_VALUE))
+                    .addComponent(txtCodigo))
+                .addGap(184, 184, 184))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCadastrar)
@@ -136,7 +130,7 @@ public class Venda extends javax.swing.JInternalFrame {
                     .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCadastrar)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -171,6 +165,10 @@ public class Venda extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "ERRO AO VENDA CLIENTE! CAMPOS EM BRANCO ");
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void txtProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProdutoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

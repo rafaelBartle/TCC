@@ -49,15 +49,15 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtCodigo" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="txtValor" max="32767" attributes="0"/>
                       <Component id="txtData" max="32767" attributes="0"/>
                       <Component id="txtQuantidade" max="32767" attributes="0"/>
+                      <Component id="txtProduto" min="-2" pref="169" max="-2" attributes="0"/>
                       <Component id="txtVendedor" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtProduto" max="32767" attributes="0"/>
+                      <Component id="txtCodigo" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="244" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
@@ -101,7 +101,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnCadastrar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="59" max="32767" attributes="0"/>
+                  <EmptySpace pref="63" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -138,34 +138,19 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtCodigo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtValor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jFormattedTextField2"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtData">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jFormattedTextField3"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtQuantidade">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jFormattedTextField4"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtVendedor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtProduto">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtProdutoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCadastrar">
           <Properties>

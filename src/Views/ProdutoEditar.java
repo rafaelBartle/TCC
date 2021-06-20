@@ -66,31 +66,17 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
 
-        txtEntrada.setText("jFormattedTextField2");
-
         jLabel1.setText("Código:");
-
-        txtCodigo.setText("jFormattedTextField1");
 
         jLabel2.setText("Marca:");
 
-        txtMarca.setText("jTextField2");
-
         jLabel3.setText("Descrição:");
 
-        txtDescricao.setText("jTextField1");
-
         jLabel4.setText("Data:");
-
-        txtVenda.setText("jFormattedTextField3");
 
         jLabel5.setText("Valor Venda:");
 
         jLabel6.setText("Custo:");
-
-        txtCusto.setText("jFormattedTextField4");
-
-        txtQuantidade.setText("jFormattedTextField5");
 
         jLabel7.setText("Quantidade:");
 
@@ -131,15 +117,15 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtCodigo)
-                        .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtQuantidade, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtCusto, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtVenda, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtEntrada, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtMarca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)))
                 .addContainerGap(240, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -187,7 +173,7 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnExcluir)
                     .addComponent(btnSalvar))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
