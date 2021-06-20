@@ -115,6 +115,12 @@ public class LoginView extends javax.swing.JFrame {
         List<UserBEAN> usuarios = dao.read();
 
     
+        
+        
+        
+        
+        
+        
 
             if (!usu.equals("")&& !senha.equals("") ) {
                 for (UserBEAN usuario : usuarios) {
