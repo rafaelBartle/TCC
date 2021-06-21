@@ -5,7 +5,7 @@
  */
 package Views;
 
-import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
+
 import javax.swing.JDesktopPane;
 import javax.swing.table.DefaultTableModel;
 import model.bean.ProductBEAN;
