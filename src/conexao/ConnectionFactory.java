@@ -17,10 +17,10 @@ import javax.swing.JOptionPane;
 
 public class ConnectionFactory {
    
-    private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/vendas";
-    private static final String USER = "root";
-    private static final String PASS = "";
+    private static final String DRIVER = "org.mariadb.jdbc.Driver";
+    private static final String URL = "jdbc:mariadb://db4free.net:3306/vendasnbl";
+    private static final String USER = "nbl_user";
+    private static final String PASS = "84259973xp";
     public Statement statement;
     public ResultSet resultset;
     private Connection conexao;

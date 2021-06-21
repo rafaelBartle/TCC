@@ -65,6 +65,8 @@ public class VendaEditar extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Codigo:");
 
+        txtCodigo.setEditable(false);
+
         jLabel1.setText("Vendedor:");
 
         jLabel2.setText("Produto:");

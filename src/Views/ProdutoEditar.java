@@ -78,6 +78,8 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Código:");
 
+        txtCodigo.setEditable(false);
+
         jLabel2.setText("Marca:");
 
         jLabel3.setText("Descrição:");

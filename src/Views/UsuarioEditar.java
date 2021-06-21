@@ -60,6 +60,8 @@ public class UsuarioEditar extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Nome:");
 
+        txtUsuario.setEditable(false);
+
         jLabel2.setText("Usuário:");
 
         jLabel3.setText("Senha:");
