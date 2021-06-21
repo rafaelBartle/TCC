@@ -36,7 +36,7 @@ public class ProductBEAN {
     }
 
     
-    public ProductBEAN(String codigo, String descricao, String tipo, String Entrada, String Venda, String custo, String quantidade) {
+    public ProductBEAN(String codigo, String tipo, String descricao, String Entrada, String Venda, String custo, String quantidade) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.tipo = tipo;
@@ -101,6 +101,8 @@ public class ProductBEAN {
     public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
+
+    
 
     public String getOberservacoes() {
         return oberservacoes;

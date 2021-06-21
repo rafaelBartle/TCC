@@ -28,7 +28,7 @@ public class ProductDAO {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            stmt = con.prepareStatement("INSERT INTO produto (codigo, tipo, descricao, entrada, custo, venda, quantidade,observacoes) VALUES (? , ?, ?, ?, ?, ?, ?, ? )");
+            stmt = con.prepareStatement("INSERT INTO produto (codigo, marca, descricao, entrada, custo, venda, quantidade,observacoes) VALUES (? , ?, ?, ?, ?, ?, ?, ? )");
             stmt.setString(1, Product.getCodigo());
             stmt.setString(2, Product.getTipo());
             stmt.setString(3, Product.getDescricao());

@@ -19,9 +19,10 @@ public class VendaEditar extends javax.swing.JInternalFrame {
     /**
      * Creates new form VendaEditar
      */
-    public VendaEditar(String codigo, JDesktopPane index) {
+    public VendaEditar(String codigo, JDesktopPane desktop) {
        initComponents();
         VendasDAO dao = new VendasDAO();
+        desktop.add(this);
         VendasBEAN vendas = dao.get(codigo);
         txtQuantidade.setText(vendas.getQuantidade());
         txtValor.setText(vendas.getValorTotal());
@@ -31,6 +32,8 @@ public class VendaEditar extends javax.swing.JInternalFrame {
        
         txtProduto.setText(vendas.getProduto());
     }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.

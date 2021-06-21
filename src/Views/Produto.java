@@ -69,6 +69,14 @@ public class Produto extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Observação:");
 
+        txtEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
+        txtVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+
+        txtCusto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+
+        txtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+
         txtObservacoes.setColumns(20);
         txtObservacoes.setRows(5);
         jScrollPane1.setViewportView(txtObservacoes);
@@ -165,7 +173,7 @@ public class Produto extends javax.swing.JInternalFrame {
         String observacoes = txtObservacoes.getText();
 
         ProductDAO dao = new ProductDAO();
-        if (!codigo.equals("") && !marca.equals("") && !descricao.equals("") && !entrada.equals("") && !entrada.equals("DD/MM/AAAA") && !venda.equals("")
+        if (!codigo.equals("") && !marca.equals("") && !descricao.equals("") && !entrada.equals("") && !venda.equals("")
                 && !custo.equals("") && !quantidade.equals("")) {
             ProductBEAN product = new ProductBEAN(codigo, marca, descricao, entrada, custo, venda, quantidade);
             if (!observacoes.equals("")) {

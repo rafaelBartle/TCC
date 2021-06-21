@@ -21,9 +21,9 @@ public class VendedorEditar extends javax.swing.JInternalFrame {
     /**
      * Creates new form VendedorEditar
      */
-    public VendedorEditar(String email, JDesktopPane index) {
+    public VendedorEditar(String email, JDesktopPane indexDesktopPanel) {
          super("EDITAR VENDEDORES");
-        index.add(this);
+        indexDesktopPanel.add(this);
         initComponents();
         VendedorDAO dao = new VendedorDAO();
         VendedorBEAN vendedor = dao.get(email);

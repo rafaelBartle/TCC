@@ -5,10 +5,17 @@
  */
 package Views;
 
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+
 /**
  *
  * @author rafae
  */
 public class Icone {
+    
+ public void Icone(JFrame jrc){
+ jrc.setIconImage(Toolkit.getDefaultToolkit().getImage("src/Img/icons8-n-50.png"));
+ }   
     
 }

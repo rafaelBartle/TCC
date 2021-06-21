@@ -9,6 +9,7 @@ import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import model.bean.ProductBEAN;
 import model.dao.ProductDAO;
+import model.dao.VendasDAO;
 
 /**
  *
@@ -19,8 +20,9 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
     /**
      * Creates new form produtoEditar
      */
-    public ProdutoEditar(String codigo,JDesktopPane index) {
-         index.add(this);
+ public ProdutoEditar(String codigo, JDesktopPane index) {
+        super("EDITAR PRODUTO");
+        index.add(this);
         initComponents();
         ProductDAO dao = new ProductDAO();
         ProductBEAN produto = dao.get(codigo);
@@ -31,9 +33,11 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
         txtEntrada.setText(produto.getEntrada());
         txtQuantidade.setText(produto.getQuantidade());
         txtObservacoes.setText(produto.getOberservacoes());
-        txtMarca.setText(produto.getTipo());
+       txtMarca.setText(produto.getTipo());
+
     }
 
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,6 +70,12 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
 
+        try {
+            txtEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         jLabel1.setText("Código:");
 
         jLabel2.setText("Marca:");
@@ -74,9 +84,27 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Data:");
 
+        try {
+            txtVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         jLabel5.setText("Valor Venda:");
 
         jLabel6.setText("Custo:");
+
+        try {
+            txtCusto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         jLabel7.setText("Quantidade:");
 

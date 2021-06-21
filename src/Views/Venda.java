@@ -155,7 +155,7 @@ public class Venda extends javax.swing.JInternalFrame {
         String quantidade = txtQuantidade.getText();
         String total = txtValor.getText();
         String data = txtData.getText();
-        if (!codigo.equals("") && !vendedor.equals("Select") && (!produto.equals("Select")) && (!quantidade.equals("")) && (!total.equals("")) && (!data.equals(""))) {
+        if ( !vendedor.equals("Select") && (!produto.equals("Select")) && (!quantidade.equals("")) && (!total.equals("")) && (!data.equals(""))) {
             if (vendedor.equals(vendedor)) {
                 VendasBEAN venda = new VendasBEAN(codigo, vendedor, produto, quantidade, total, data);
                 dao.create(venda);

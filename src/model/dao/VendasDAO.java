@@ -27,7 +27,7 @@ public class VendasDAO {
     Connection con = ConnectionFactory.getConnection();
     PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("INSERT INTO Venda (Codigo , Vendedor  , Produto , Quantidade , ValorTotal ,Data ) VALUES (?,?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO Venda (Codigo, Vendedor  , Produto , Quantidade , ValorTotal ,Data ) VALUES (?,?,?,?,?,?)");
             stmt.setString(1, ven.getCodigo());
             stmt.setString(2, ven.getVendedor());
             stmt.setString(3, ven.getProduto());

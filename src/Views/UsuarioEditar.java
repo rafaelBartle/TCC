@@ -19,14 +19,20 @@ public class UsuarioEditar extends javax.swing.JInternalFrame {
     /**
      * Creates new form UsuarioEditar
      */
-    public UsuarioEditar(String usu, JDesktopPane index) {
+     public UsuarioEditar(String email, JDesktopPane index) {
+        super("EDITAR USUÁRIOS");
+        index.add(this);
+        initComponents();
         UserDAO dao = new UserDAO();
-        UserBEAN usuario = dao.get(usu);
+        UserBEAN usuario = dao.get(email);
         txtUsuario.setText(usuario.getNomeusu());
         txtNome.setText(usuario.getNome());
         txtSenha.setText(usuario.getSenha());
         txtConfisenha.setText(usuario.getSenha());
+
+
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,8 +59,6 @@ public class UsuarioEditar extends javax.swing.JInternalFrame {
         setIconifiable(true);
 
         jLabel1.setText("Nome:");
-
-        txtUsuario.setEditable(false);
 
         jLabel2.setText("Usuário:");
 

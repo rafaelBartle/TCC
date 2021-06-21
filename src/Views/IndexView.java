@@ -55,11 +55,13 @@ public class IndexView extends javax.swing.JFrame {
         );
         indexDesktopPanelLayout.setVerticalGroup(
             indexDesktopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 363, Short.MAX_VALUE)
+            .addGap(0, 360, Short.MAX_VALUE)
         );
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-sair-22.png"))); // NOI18N
         jMenu2.setText("Sair");
 
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-sair-22 (1).png"))); // NOI18N
         jMenuItem8.setText("Sair");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,8 +72,10 @@ public class IndexView extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-selecione-usuários-22.png"))); // NOI18N
         jMenu1.setText("Usuarios");
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-lista-22.png"))); // NOI18N
         jMenuItem1.setText("Listar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,8 +86,10 @@ public class IndexView extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-venda-22.png"))); // NOI18N
         jMenu3.setText("Vendas");
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-cesta-de-compras-22.png"))); // NOI18N
         jMenuItem2.setText("Incluir");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +98,7 @@ public class IndexView extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem2);
 
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-lista-22.png"))); // NOI18N
         jMenuItem3.setText("Listar");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,8 +109,10 @@ public class IndexView extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-homem-do-usuário-3-22.png"))); // NOI18N
         jMenu4.setText("Vendedores");
 
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-adicionar-usuário-masculino-22.png"))); // NOI18N
         jMenuItem4.setText("Incluir");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +121,7 @@ public class IndexView extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem4);
 
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-lista-22.png"))); // NOI18N
         jMenuItem5.setText("Listar");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,8 +132,10 @@ public class IndexView extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-cesta-de-compras-22.png"))); // NOI18N
         jMenu5.setText("Produto");
 
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-novo-22.png"))); // NOI18N
         jMenuItem7.setText("Incluir");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +144,7 @@ public class IndexView extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem7);
 
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-lista-22.png"))); // NOI18N
         jMenuItem6.setText("Listar");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
