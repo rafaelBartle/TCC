@@ -21,7 +21,7 @@ import model.bean.UserBEAN;
 
 /**
  *
- * @author 
+ * @author rafae
  */
 public class UserDAO {
     public void create(UserBEAN user){

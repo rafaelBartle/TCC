@@ -17,7 +17,7 @@ import model.bean.VendedorBEAN;
 
 /**
  *
- * @author WELLINGTON
+ * @author rafae
  */
 public class VendedorDAO {
     public void create(VendedorBEAN vendedor){

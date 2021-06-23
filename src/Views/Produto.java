@@ -69,6 +69,8 @@ public class Produto extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Observação:");
 
+        txtCodigo.setEditable(false);
+
         txtEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
         txtVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
@@ -154,7 +156,7 @@ public class Produto extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(btnCadastrar)
                 .addGap(28, 28, 28))
         );
@@ -173,7 +175,7 @@ public class Produto extends javax.swing.JInternalFrame {
         String observacoes = txtObservacoes.getText();
 
         ProductDAO dao = new ProductDAO();
-        if (!codigo.equals("") && !marca.equals("") && !descricao.equals("") && !entrada.equals("") && !venda.equals("")
+        if (!marca.equals("") && !descricao.equals("") && !entrada.equals("") && !venda.equals("")
                 && !custo.equals("") && !quantidade.equals("")) {
             ProductBEAN product = new ProductBEAN(codigo, marca, descricao, entrada, custo, venda, quantidade);
             if (!observacoes.equals("")) {

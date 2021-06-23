@@ -8,7 +8,7 @@ package model.bean;
 
 /**
  *
- * @author
+ * @author rafae
  */
 public class UserBEAN {
    private String nome;

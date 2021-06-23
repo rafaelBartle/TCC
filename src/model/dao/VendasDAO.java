@@ -20,7 +20,7 @@ import model.bean.VendasBEAN;
 
 /**
  *
- * @author 
+ * @author rafae 
  */
 public class VendasDAO {
     public void create(VendasBEAN ven){

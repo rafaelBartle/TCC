@@ -19,7 +19,7 @@ import model.bean.ProductBEAN;
 
 /**
  *
- * @author WELLINGTON
+ * @author rafae
  */
 public class ProductDAO {
 
