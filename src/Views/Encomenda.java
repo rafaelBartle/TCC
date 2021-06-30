@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package Views;
-import javax.swing.JDesktopPane;
+
+import java.util.List;
 import javax.swing.JOptionPane;
-import model.bean.ProductBEAN;
-import model.dao.ProductDAO;
+import model.bean.EncomendaBEAN;
+import model.dao.EncomendaDAO;
+
 /**
  *
  * @author rafae
@@ -18,6 +20,7 @@ public class Encomenda extends javax.swing.JInternalFrame {
      * Creates new form Encomenda
      */
     public Encomenda() {
+        super("ENCOMENDA");
         initComponents();
     }
 
@@ -42,11 +45,21 @@ public class Encomenda extends javax.swing.JInternalFrame {
         status = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtProduto = new javax.swing.JTextField();
         txtDescricao = new javax.swing.JTextField();
         dt_encomenda = new javax.swing.JFormattedTextField();
+        txtProduto = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JFormattedTextField();
+
+        setClosable(true);
+
+        txtPrevisao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
+        txtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
         jLabel1.setText("Produto:");
+
+        txtValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
         jLabel2.setText("Descrição:");
 
@@ -69,6 +82,12 @@ public class Encomenda extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Valor:");
 
+        dt_encomenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
+        jLabel8.setText("Codigo:");
+
+        txtCodigo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,12 +103,15 @@ public class Encomenda extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel1)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(status, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtProduto)))
+                            .addComponent(txtProduto)
+                            .addComponent(txtCodigo)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -108,20 +130,25 @@ public class Encomenda extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(156, 156, 156)
+                .addGap(128, 128, 128)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7))
-                .addGap(9, 9, 9)
+                        .addGap(31, 31, 31))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7)
+                        .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(dt_encomenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -139,32 +166,35 @@ public class Encomenda extends javax.swing.JInternalFrame {
                     .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCadastrar)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-     String produto = txtProduto.getText();
+        String codigo = txtCodigo.getText();
+        String produto = txtProduto.getText();
         String descricao = txtDescricao.getText();
-        String stts = status.getName();
-        String dataEencomenda = dt_encomenda.getText();
+        String stts = status.getSelectedItem()+"";
+        String data = dt_encomenda.getText();
         String previsao = txtPrevisao.getText();
         String quantidade = txtQuantidade.getText();
         String valor = txtValor.getText();
-
-        ProductDAO dao = new ProductDAO();
-        if (!produto.equals("") && !descricao.equals("") && !stts.equals("") && !dataEencomenda.equals("")
-                && !previsao.equals("") && !quantidade.equals("") && !valor.equals("")) {
-            ProductBEAN product = new ProductBEAN( marca, descricao, entrada, custo, venda, quantidade);
+        
+        //System.out.println(produto+" "+ descricao + " " + " " +stts + " "+  data +" "+ previsao + " " + quantidade + " "+  valor);
+        
+      EncomendaDAO dao = new EncomendaDAO();
+       if(!codigo.equals("")&&!valor.equals("") && !produto.equals("") && !descricao.equals("") && !stts.equals("") && !data.equals("") && !previsao.equals("") && !quantidade.equals("")){
+            int qtd = Integer.parseInt(txtQuantidade.getText());
+            int vlr = Integer.parseInt(txtValor.getText());
             
-            }
-            dao.create();
-         
-        } else {
-            JOptionPane.showMessageDialog(null, "ERRO AO CADASTRAR PRODUTO CAMPOS EM BRANCO !!!");
-        }
+        EncomendaBEAN encomenda = new EncomendaBEAN(codigo,produto,descricao,stts,data,previsao,qtd,vlr);
+        dao.create(encomenda);
+       }else{
+       JOptionPane.showMessageDialog(null, "ERRO AO CADASTRAR PRODUTO CAMPOS EM BRANCO !!!");
+       }
+        
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
 
@@ -178,11 +208,15 @@ public class Encomenda extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JComboBox<String> status;
+    private javax.swing.JFormattedTextField txtCodigo;
     private javax.swing.JTextField txtDescricao;
     private javax.swing.JFormattedTextField txtPrevisao;
     private javax.swing.JTextField txtProduto;
     private javax.swing.JFormattedTextField txtQuantidade;
     private javax.swing.JFormattedTextField txtValor;
     // End of variables declaration//GEN-END:variables
+
+   
 }

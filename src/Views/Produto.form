@@ -147,9 +147,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="txtCodigo">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDescricao">
     </Component>
@@ -165,14 +162,14 @@
     <Component class="javax.swing.JFormattedTextField" name="txtVenda">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format subtype="0" type="4"/>
+          <Format subtype="0" type="0"/>
         </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="txtCusto">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format subtype="0" type="4"/>
+          <Format subtype="0" type="0"/>
         </Property>
       </Properties>
     </Component>

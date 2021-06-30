@@ -17,6 +17,7 @@ public class IndexView extends javax.swing.JFrame {
      * Creates new form IndexView
      */
     public IndexView() {
+        super("NEBLINADOS");
         initComponents();
     }
 
@@ -46,7 +47,7 @@ public class IndexView extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        Listar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,9 +171,19 @@ public class IndexView extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem9);
 
-        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-lista-22.png"))); // NOI18N
-        jMenuItem10.setText("listar");
-        jMenu6.add(jMenuItem10);
+        Listar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-lista-22.png"))); // NOI18N
+        Listar.setText("listar");
+        Listar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListarMouseClicked(evt);
+            }
+        });
+        Listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListarActionPerformed(evt);
+            }
+        });
+        jMenu6.add(Listar);
 
         jMenuBar1.add(jMenu6);
 
@@ -239,10 +250,22 @@ public class IndexView extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-      
+      Encomenda encomenda = new Encomenda();
+      indexDesktopPanel.add(encomenda);
+      encomenda.setVisible(true);
        
         
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void ListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListarMouseClicked
+       
+    }//GEN-LAST:event_ListarMouseClicked
+
+    private void ListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarActionPerformed
+       EncomendaListar listar = new EncomendaListar(indexDesktopPanel);
+       indexDesktopPanel.add(listar);
+       listar.setVisible(true);
+    }//GEN-LAST:event_ListarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,6 +303,7 @@ public class IndexView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Listar;
     private javax.swing.JDesktopPane indexDesktopPanel;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -289,7 +313,6 @@ public class IndexView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

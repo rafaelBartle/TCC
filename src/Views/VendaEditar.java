@@ -73,7 +73,13 @@ public class VendaEditar extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Quantidade:");
 
+        txtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+
         jLabel4.setText("Data:");
+
+        txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
+        txtValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
         jLabel5.setText("ValorTotal:");
 

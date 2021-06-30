@@ -19,6 +19,7 @@ public class Produto extends javax.swing.JInternalFrame {
      * Creates new form Produto
      */
     public Produto() {
+        super("CADASTRAR PRODUTOS");
         initComponents();
     }
 
@@ -69,13 +70,11 @@ public class Produto extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Observação:");
 
-        txtCodigo.setEditable(false);
-
         txtEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
-        txtVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        txtVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
-        txtCusto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
+        txtCusto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
         txtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
@@ -163,7 +162,18 @@ public class Produto extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+public void LimpaForm(){
+        txtCodigo.setText("");
+        txtVenda.setText("");
+        txtDescricao.setText("");
+        txtCusto.setText("");
+        txtVenda.setText("");
+        txtEntrada.setText("");
+        txtQuantidade.setText("");
+        txtObservacoes.setText("");
+       txtMarca.setText("");
+}
+    
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         String codigo = txtCodigo.getText();
         String marca = txtMarca.getText();
@@ -178,11 +188,12 @@ public class Produto extends javax.swing.JInternalFrame {
         if (!marca.equals("") && !descricao.equals("") && !entrada.equals("") && !venda.equals("")
                 && !custo.equals("") && !quantidade.equals("")) {
             ProductBEAN product = new ProductBEAN(codigo, marca, descricao, entrada, custo, venda, quantidade);
+          //  System.out.println(codigo + " " +marca + " " +descricao + " " +entrada + " " +venda + " "+custo + " "+quantidade + " " +observacoes);
             if (!observacoes.equals("")) {
                 product.setOberservacoes(observacoes);
             }
             dao.create(product);
-         
+            LimpaForm();
         } else {
             JOptionPane.showMessageDialog(null, "ERRO AO CADASTRAR PRODUTO CAMPOS EM BRANCO !!!");
         }

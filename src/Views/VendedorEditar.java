@@ -62,8 +62,6 @@ public class VendedorEditar extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Email:");
 
-        txtEmail.setEditable(false);
-
         jLabel3.setText("Telefone:");
 
         jLabel4.setText("Cpf:");

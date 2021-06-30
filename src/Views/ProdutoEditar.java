@@ -49,7 +49,6 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
 
         txtEntrada = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtCodigo = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
         txtMarca = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -66,19 +65,14 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
         txtObservacoes = new javax.swing.JTextArea();
         btnExcluir = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
+        txtCodigo = new javax.swing.JFormattedTextField();
 
         setClosable(true);
         setIconifiable(true);
 
-        try {
-            txtEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtEntrada.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
         jLabel1.setText("Código:");
-
-        txtCodigo.setEditable(false);
 
         jLabel2.setText("Marca:");
 
@@ -86,27 +80,15 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Data:");
 
-        try {
-            txtVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtVenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
         jLabel5.setText("Valor Venda:");
 
         jLabel6.setText("Custo:");
 
-        try {
-            txtCusto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtCusto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
-        try {
-            txtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
         jLabel7.setText("Quantidade:");
 
@@ -130,6 +112,8 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
             }
         });
 
+        txtCodigo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -149,12 +133,12 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtQuantidade, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtCusto, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtVenda, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtEntrada, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtCodigo, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtMarca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)))
                 .addContainerGap(240, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -167,11 +151,11 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -203,7 +187,7 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnExcluir)
                     .addComponent(btnSalvar))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -225,6 +209,7 @@ public class ProdutoEditar extends javax.swing.JInternalFrame {
             if (!observacoes.equals("")) {
                 produto.setOberservacoes(observacoes);
             }
+            System.out.println(codigo + " " +marca + " " +descricao + " " +entrada + " " +venda + " "+custo + " "+quantidade + " " +observacoes);
             dao.update(produto);
             this.dispose();
 

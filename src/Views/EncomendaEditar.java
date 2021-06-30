@@ -5,6 +5,12 @@
  */
 package Views;
 
+import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
+import model.bean.EncomendaBEAN;
+import model.bean.ProductBEAN;
+import model.dao.EncomendaDAO;
+
 /**
  *
  * @author rafae
@@ -14,8 +20,23 @@ public class EncomendaEditar extends javax.swing.JInternalFrame {
     /**
      * Creates new form EncomendaEditar
      */
-    public EncomendaEditar() {
+    public EncomendaEditar(String codigo, JDesktopPane index) {
+        super("EDITAR ENCOMENDA");
+        index.add(this);
         initComponents();
+        EncomendaDAO dao = new EncomendaDAO();
+        int cod = Integer.parseInt(codigo);
+        EncomendaBEAN encomenda = dao.get(cod);
+        txtCodigo.setText(encomenda.getCodigo()+"");
+        txtProduto.setText(encomenda.getProduto());
+        txtDescricao.setText(encomenda.getDescricao());
+        txtDt_pedido.setText(encomenda.getData());
+        txtPrevisao.setText(encomenda.getPrevisao());
+        txtQuantidade.setText(encomenda.getQuantidade()+"");
+        txtValor.setText(encomenda.getValor()+"");
+        
+        
+       
     }
 
     /**
@@ -27,25 +48,37 @@ public class EncomendaEditar extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dt_pedido = new javax.swing.JFormattedTextField();
+        txtDt_pedido = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboStatus = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        previsao = new javax.swing.JFormattedTextField();
+        txtPrevisao = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
-        quantidade = new javax.swing.JFormattedTextField();
-        produto = new javax.swing.JTextField();
+        txtQuantidade = new javax.swing.JFormattedTextField();
+        txtProduto = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        descricao = new javax.swing.JTextField();
-        valor = new javax.swing.JFormattedTextField();
+        txtDescricao = new javax.swing.JTextField();
+        txtValor = new javax.swing.JFormattedTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        btnExcluir = new javax.swing.JButton();
+
+        setClosable(true);
+
+        txtDt_pedido.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
         jLabel2.setText("Descrição:");
 
-        jButton1.setText("Salvar");
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Data:");
 
@@ -53,13 +86,30 @@ public class EncomendaEditar extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Previsão de Entrega:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguardando Entrega", "Entregue ao Cliente ", "Pedido Cancelado", " " }));
+        comboStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguardando Entrega", "Entregue ao Cliente ", "Pedido Cancelado", " " }));
 
         jLabel5.setText("Quantidade:");
 
+        txtPrevisao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
+
         jLabel6.setText("Valor:");
 
+        txtQuantidade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+
         jLabel1.setText("Produto:");
+
+        txtValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+
+        jLabel8.setText("Codigo:");
+
+        txtCodigo.setEditable(false);
+
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,12 +122,14 @@ public class EncomendaEditar extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(descricao, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(produto)))
+                            .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(comboStatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtProduto)
+                            .addComponent(txtCodigo)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -87,62 +139,110 @@ public class EncomendaEditar extends javax.swing.JInternalFrame {
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(dt_pedido)
-                            .addComponent(previsao)
-                            .addComponent(quantidade)
-                            .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtDt_pedido)
+                            .addComponent(txtPrevisao)
+                            .addComponent(txtQuantidade)
+                            .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(260, 260, 260))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(197, 197, 197))
+                .addComponent(btnExcluir)
+                .addGap(51, 51, 51)
+                .addComponent(btnSalvar)
+                .addGap(134, 134, 134))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(156, 156, 156)
+                .addGap(128, 128, 128)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(comboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel7))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(dt_pedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDt_pedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(previsao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPrevisao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSalvar)
+                    .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        String codigo = txtCodigo.getText();
+        String produto = txtProduto.getText();
+        String descricao = txtDescricao.getText();
+        String stts = comboStatus.getSelectedItem()+"";
+        String data = txtDt_pedido.getText();
+        String previsao = txtPrevisao.getText();
+        String quantidade = txtQuantidade.getText();
+        String valor = txtValor.getText();
+        
+       
+       EncomendaDAO dao = new EncomendaDAO();
+       if(!codigo.equals("")&&!valor.equals("") && !produto.equals("") && !descricao.equals("") && !stts.equals("") && !data.equals("") && !previsao.equals("") && !quantidade.equals("")){
+            int qtd = Integer.parseInt(txtQuantidade.getText());
+            int vlr = Integer.parseInt(txtValor.getText());
+          System.out.println(codigo + " " + produto+" "+ descricao + " " + " " +stts + " "+  data +" "+ previsao + " " + qtd + " "+  vlr);
+           
+        EncomendaBEAN encomenda = new EncomendaBEAN(codigo,produto,descricao,stts,data,previsao,qtd,vlr);
+        dao.update(encomenda);
+       }else{
+       JOptionPane.showMessageDialog(null, "ERRO AO CADASTRAR PRODUTO CAMPOS EM BRANCO !!!");
+       }
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+                String mensagem = "DESEJA REALMENTE REMOVER O ENCOMENDA ?";
+        String titulo = "REMOVER ENCOMENDA";
+        String codigo = txtCodigo.getText();
+        int reply = JOptionPane.showConfirmDialog(null, mensagem, title, JOptionPane.YES_NO_OPTION);
+
+        if (reply == JOptionPane.YES_OPTION) {
+            EncomendaDAO dao = new EncomendaDAO();
+            
+            dao.delete(codigo);
+            this.dispose();
+
+        } else {
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField descricao;
-    private javax.swing.JFormattedTextField dt_pedido;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox<String> comboStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -150,9 +250,13 @@ public class EncomendaEditar extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JFormattedTextField previsao;
-    private javax.swing.JTextField produto;
-    private javax.swing.JFormattedTextField quantidade;
-    private javax.swing.JFormattedTextField valor;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtDescricao;
+    private javax.swing.JFormattedTextField txtDt_pedido;
+    private javax.swing.JFormattedTextField txtPrevisao;
+    private javax.swing.JTextField txtProduto;
+    private javax.swing.JFormattedTextField txtQuantidade;
+    private javax.swing.JFormattedTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }
